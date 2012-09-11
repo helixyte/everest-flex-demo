@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Module xmlns:fx="http://ns.adobe.com/mxml/2009"
+           xmlns:s="library://ns.adobe.com/flex/spark"
+           xmlns:mx="library://ns.adobe.com/flex/mx"
+           xmlns:maps="org.everest.flex.maps.*"
+           xmlns:views="org.everest.flex.demo.plantscribe.modules.customercollection.ui.views.*"
+           width="100%" height="100%" >
+    <fx:Script>
+        <![CDATA[
+            import org.everest.flex.demo.plantscribe.model.ContentType;
+            import org.everest.flex.model.managers.CollectionManager;
+            import org.everest.flex.ui.presenters.CollectionPresentationModel;
+
+        ]]>
+    </fx:Script>
+    <fx:Declarations>
+        <maps:CollectionEventMap
+            dispatcher="{this}"
+            contentType="{ContentType.CUSTOMER_COLLECTION}"
+            presenter="{CollectionPresentationModel}"
+            view="{CustomerCollectionView}"
+            />
+    </fx:Declarations>
+
+    <views:CustomerCollectionView width="100%" height="100%" />
+</s:Module>

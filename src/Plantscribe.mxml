@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               xmlns:mx="library://ns.adobe.com/flex/mx"
+               xmlns:maps="org.everest.flex.maps.*"
+               xmlns:views="org.everest.flex.ui.views.*"
+               pageTitle="Plantscribe"
+               scriptTimeLimit="60"
+               minWidth="955" minHeight="600">
+
+    <fx:Script>
+        <![CDATA[
+            import org.everest.flex.events.NavigationEvent;
+            import org.everest.flex.model.ContentType;
+
+
+            public function loadPage(url:String):void
+            {
+                var event:NavigationEvent = new NavigationEvent(NavigationEvent.LOAD_PAGE);
+                    event.pageUrl = url;
+                shell.dispatchEvent(event);
+            }
+            public function loadHome(e:Event=null):void
+            {
+                var event:NavigationEvent = new NavigationEvent(NavigationEvent.LOAD_MODULE);
+                    event.contentType = ContentType.APP_SERVICE;
+                    event.pageUrl = '/';
+                shell.dispatchEvent(event);
+            }
+        ]]>
+    </fx:Script>
+    <fx:Style source="/assets/main.css" />
+    <fx:Declarations>
+        <!-- this is the main configuration file for the everest-flex framework -->
+        <maps:EverestShellEventMap everestConfiguration="{new PlantscribeConfiguration()}" />
+    </fx:Declarations>
+
+    <s:controlBarContent>
+        <s:Label text="Plantscribe" fontWeight="bold" fontSize="22" click="loadHome()" />
+        <s:Spacer width="100%"/>
+        <s:Button label="Customers" click="loadPage('/customers/')" />
+        <s:Button label="Species" click="loadPage('/species/')" />
+    </s:controlBarContent>
+
+    <mx:ProgressBar id="progressBar" indeterminate="true"  textAlign="center" top="30"
+                    left="{width / 2}" visible="{shell.loading}"/>
+
+    <views:EverestShellView left="0" right="0" top="0" bottom="23" id="shell" visible="true"/>
+
+</s:Application>

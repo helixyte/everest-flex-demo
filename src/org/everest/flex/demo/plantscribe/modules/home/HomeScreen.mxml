@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Module xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          xmlns:mx="library://ns.adobe.com/flex/mx"
+          xmlns:views="org.everest.flex.demo.plantscribe.modules.menu.ui.views.*"
+          xmlns:maps="org.everest.flex.demo.plantscribe.modules.menu.maps.*"
+          width="100%" height="100%" xmlns:components="org.everest.flex.ui.components.*" >
+    <fx:Script>
+        <![CDATA[
+            import org.everest.flex.model.Link;
+        ]]>
+    </fx:Script>
+    <s:layout>
+        <s:VerticalLayout paddingTop="10" paddingLeft="10" paddingBottom="10" paddingRight="10"/>
+    </s:layout>
+    <s:Label text="Home Screen" fontWeight="bold" />
+    <s:Label text="Put here some text to explain this demo application and how to use it..."/>
+    <s:Label text="bla .. customers bla bla ...:" />
+    <components:MemberLinkButton link="{new Link('Customers','/customers/')}"/>
+    <s:Label text="bla .. species bla bla ...:" />
+    <components:MemberLinkButton link="{new Link('Species','/species/')}"/>
+</s:Module>

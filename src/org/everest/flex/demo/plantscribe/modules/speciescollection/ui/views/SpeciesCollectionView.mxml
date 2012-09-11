@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view:CollectionView xmlns:fx="http://ns.adobe.com/mxml/2009"
+                     xmlns:s="library://ns.adobe.com/flex/spark"
+                     xmlns:mx="library://ns.adobe.com/flex/mx"
+                     xmlns:view="org.everest.flex.ui.views.*"
+                     xmlns:components="org.everest.flex.ui.components.*"
+                     newMemberView="{NewSpeciesView}"
+                     title="Species">
+    <view:filterFormContent>
+        <s:FormItem label="Species Name" width="100%">
+            <components:SmartTextArea name="species_name" operator="contains"
+                                      criteria="{model.criteria}" restrict="a-zA-Z0-9 ,"/>
+        </s:FormItem>
+        <s:FormItem label="Genus Name" width="100%">
+            <components:SmartTextArea name="genus_name" operator="contains"
+                                      criteria="{model.criteria}" restrict="a-zA-Z0-9 ,"/>
+        </s:FormItem>
+        <s:FormItem label="Author" width="100%">
+            <components:SmartTextArea name="author" operator="contains"
+                                      criteria="{model.criteria}" restrict="a-zA-Z0-9 ,"/>
+        </s:FormItem>
+        <s:FormItem label="Cultivar" width="100%">
+            <components:SmartTextArea name="cultivar" operator="contains"
+                                      criteria="{model.criteria}" restrict="a-zA-Z0-9 ,"/>
+        </s:FormItem>
+    </view:filterFormContent>
+    <view:collectionGridColumns>
+        <s:GridColumn headerText="Genus Name" dataField="genus_name"/>
+        <s:GridColumn headerText="Species Name" dataField="species_name"/>
+        <s:GridColumn headerText="Author" dataField="author"/>
+        <s:GridColumn headerText="Cultivar" dataField="cultivar"/>
+    </view:collectionGridColumns>
+</view:CollectionView>

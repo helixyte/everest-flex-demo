@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<views:NewMemberView xmlns:fx="http://ns.adobe.com/mxml/2009"
+                    xmlns:s="library://ns.adobe.com/flex/spark"
+                    xmlns:mx="library://ns.adobe.com/flex/mx"
+                    xmlns:view="org.everest.flex.ui.views.*"
+                    xmlns:views="org.everest.flex.ui.views.*"
+                    xmlns:vos=" org.everest.flex.demo.plantscribe.model.*"
+                    title="New Species"
+                    creationComplete="{focusManager.setFocus(inputGenusName)}">
+
+    <fx:Script>
+        <![CDATA[
+            import org.everest.flex.demo.plantscribe.model.SpeciesMember;
+            import org.everest.flex.model.Member;
+
+            protected override function get member():Member{
+                var member:SpeciesMember = new SpeciesMember();
+                    member.genus_name = inputGenusName.text;
+                    member.species_name = inputSpeciesName.text;
+                    member.author = inputAuthor.text;
+                    member.cultivar = inputCultivar.text;
+
+                return member;
+
+            }
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+
+        <fx:Array id="validators">
+            <mx:StringValidator source="{inputGenusName}" property="text" minLength="3" maxLength="256" />
+            <mx:StringValidator source="{inputSpeciesName}" property="text" minLength="3" maxLength="256" />
+        </fx:Array>
+
+    </fx:Declarations>
+
+    <s:Form width="100%" height="100%" id="newMemberForm">
+        <s:FormItem label="Genus Name" width="100%">
+            <s:TextInput id="inputGenusName" width="100%" change="this.formValidator.validateForm(event);"/>
+        </s:FormItem>
+        <s:FormItem label="Species Name" width="100%">
+            <s:TextInput id="inputSpeciesName" width="100%" change="this.formValidator.validateForm(event);"/>
+        </s:FormItem>
+        <s:FormItem label="Author" width="100%">
+            <s:TextInput id="inputAuthor" width="100%" change="this.formValidator.validateForm(event);"/>
+        </s:FormItem>
+        <s:FormItem label="Cultivar" width="100%">
+            <s:TextInput id="inputCultivar" width="100%" change="this.formValidator.validateForm(event);" />
+        </s:FormItem>
+        <s:FormItem>
+            <s:HGroup>
+                <s:Button label="Submit" click="createMember()" enabled="{this.formValidator.formIsValid}"/>
+                <s:Button label="Cancel" click="close()"/>
+            </s:HGroup>
+        </s:FormItem>
+    </s:Form>
+</views:NewMemberView>

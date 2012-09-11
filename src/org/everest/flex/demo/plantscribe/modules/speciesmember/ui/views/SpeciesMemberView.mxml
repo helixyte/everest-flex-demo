@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view:MemberView xmlns:fx="http://ns.adobe.com/mxml/2009"
+                 xmlns:s="library://ns.adobe.com/flex/spark"
+                 xmlns:mx="library://ns.adobe.com/flex/mx"
+                xmlns:view="org.everest.flex.ui.views.*"
+                 width="100%" height="100%"
+                 title="{'Species: ' + model.title}">
+
+    <view:content>
+        <s:Form width="100%">
+            <s:FormItem label="Genus Name" width="100%">
+                <s:Label text="{model.genus_name}"/>
+            </s:FormItem>
+            <s:FormItem label="Species Name" width="100%">
+                <s:Label text="{model.species_name}" />
+            </s:FormItem>
+            <s:FormItem label="Author" width="100%">
+                <s:Label text="{model.author}" />
+            </s:FormItem>
+            <s:FormItem label="Cultivar" width="100%">
+                <s:Label text="{model.cultivar}" />
+            </s:FormItem>
+        </s:Form>
+    </view:content>
+
+</view:MemberView>
