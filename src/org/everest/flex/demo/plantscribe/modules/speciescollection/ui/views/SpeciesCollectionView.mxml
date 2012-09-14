@@ -8,11 +8,11 @@
                      title="Species">
     <view:filterFormContent>
         <s:FormItem label="Species Name" width="100%">
-            <components:SmartTextArea name="species_name" operator="contains"
+            <components:SmartTextArea name="species-name" operator="contains"
                                       criteria="{model.criteria}" restrict="a-zA-Z0-9 ,"/>
         </s:FormItem>
         <s:FormItem label="Genus Name" width="100%">
-            <components:SmartTextArea name="genus_name" operator="contains"
+            <components:SmartTextArea name="genus-name" operator="contains"
                                       criteria="{model.criteria}" restrict="a-zA-Z0-9 ,"/>
         </s:FormItem>
         <s:FormItem label="Author" width="100%">
