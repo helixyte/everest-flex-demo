@@ -29,11 +29,13 @@
             }
         ]]>
     </fx:Script>
-    <fx:Style source="/assets/main.css" />
+
     <fx:Declarations>
         <!-- this is the main configuration file for the everest-flex framework -->
         <maps:EverestShellEventMap everestConfiguration="{new PlantscribeConfiguration()}" />
     </fx:Declarations>
+
+    <fx:Style source="/assets/main.css" />
 
     <s:controlBarContent>
         <s:Label text="Plantscribe" fontWeight="bold" fontSize="22" click="loadHome()" />
@@ -42,9 +44,15 @@
         <s:Button label="Species" click="loadPage('/species/')" />
     </s:controlBarContent>
 
+    <s:controlBarLayout>
+        <s:HorizontalLayout paddingLeft="16" paddingRight="16"
+                            paddingTop="8" paddingBottom="8"
+                            verticalAlign="middle" />
+    </s:controlBarLayout>
+
     <mx:ProgressBar id="progressBar" indeterminate="true"  textAlign="center" top="30"
                     left="{width / 2}" visible="{shell.loading}"/>
 
-    <views:EverestShellView left="0" right="0" top="0" bottom="23" id="shell" visible="true"/>
+    <views:EverestShellView left="0" right="0" top="0" bottom="0" id="shell" visible="true"/>
 
 </s:Application>

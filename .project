@@ -19,7 +19,7 @@
 		<link>
 			<name>bin-debug</name>
 			<type>2</type>
-			<location>/Users/rothe/git/everest/docs/demoapp/v0/public</location>
+			<location>/Users/rothe/git/everest-demo/public</location>
 		</link>
 	</linkedResources>
 </projectDescription>
