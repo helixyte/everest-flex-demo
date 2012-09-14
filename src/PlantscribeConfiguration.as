@@ -29,7 +29,7 @@ package
         public override function get schemaMappings():Vector.<SchemaModelEntry>
         {
             var res:Vector.<SchemaModelEntry> = new Vector.<SchemaModelEntry>();
-                res.push( new SchemaModelEntry("customer", "http://schemata.everest.org/plantscribe", "Customer",CustomerMember, "/schemata/Plantscribe.xsd" ) );
+                res.push( new SchemaModelEntry("customer", "http://schemata.everest.org/plantscribe", "Customer",CustomerMember, "/public/schemata/Plantscribe.xsd" ) );
                 res.push( new SchemaModelEntry("species", "http://schemata.everest.org/plantscribe", "Species",SpeciesMember) );
                 res.push( new SchemaModelEntry("site", "http://schemata.everest.org/plantscribe", "Site",SiteMember) );
                 res.push( new SchemaModelEntry("project", "http://schemata.everest.org/plantscribe", "Project",ProjectMember) );
